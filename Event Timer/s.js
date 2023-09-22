@@ -1,0 +1,20 @@
+var DaysElem = document.querySelector("#DaysElem");
+var HoursElem = document.querySelector("#HoursElem");
+var MinElem = document.querySelector("#MinElem");
+var SecElem = document.querySelector("#SecElem");
+setInterval(function (){
+    var today = new Date();
+var Event = new Date(2023, 10, 20, 0, 0, 0, 0);
+var diff = Event - today;
+var sec =Math.floor ((diff / 1000));
+var min =Math.floor((diff / (1000 * 60)));
+var hours =Math.floor ((diff / (1000 * 60 * 60)));
+var days =Math.floor((diff / (1000 * 60 * 60 * 24)));
+hours = hours % 24;
+min = min % 60;
+sec = sec % 60;
+DaysElem.textContent = days;
+HoursElem.textContent = hours;
+MinElem.textContent = min;
+SecElem.textContent = sec;
+}, 1000);
